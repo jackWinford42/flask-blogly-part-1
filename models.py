@@ -13,6 +13,15 @@ class User(db.Model):
     last_name = db.Column(db.String(20), nullable=False)
     image_url = db.Column(db.Text, nullable=False, default=default_url)
 
+class Post(db.Model):
+    __tablename__ = 'post'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
+
 def connect_db(app):
     """Connect to database."""
     

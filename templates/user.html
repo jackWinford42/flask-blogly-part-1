@@ -8,4 +8,12 @@
     <form action="{{ delete_url }}">
         <input type="submit" value="delete"></input>
     </form>
+    <ul>
+        {% for post in posts %}
+            <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="/users/{{ user.id }}/posts/new">
+        <input type="submit" value="Add Post"></input>
+    </form>
 {% endblock %}
