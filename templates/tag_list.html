@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+    {% for tag in tags %}
+        <li><a href="/tags/{{ tag.id }}">{{ tag.name }}</a></li>
+    {% endfor %}
+</ul>
+<form action="/tags/new">
+    <input type="submit" value="add tag">
+</form>
+<!-- This button was not required but it makes navigation much more pleasant -->
+<form action="/users">
+    <input type="submit" value="return to users">
+</form>
+{% endblock %}

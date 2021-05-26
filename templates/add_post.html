@@ -6,6 +6,10 @@
     <input type="text" name="title"></input>
     <label>Content</label>
     <textarea name="content" cols="40" rows="5"></textarea>
+    {% for tag in tags %}
+        <label for="{{ tag.id }}">{{ tag.name }}</label>
+        <input type="checkbox" name="{{ tag.id }}">
+    {% endfor %}
     <input type="submit" name="cancel_button" value="Cancel"></input>
     <input type="submit" name="save_button" value="Add"></input>
 </form>

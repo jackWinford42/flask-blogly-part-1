@@ -2,6 +2,12 @@
 {% block content %}
 <h1>{{ post.title }}</h1>
 <p>{{ post.content }}</p>
+<p><strong>Tags: </strong></p>
+<ul>
+    {% for tag in tags %}
+        <li>{{ tag.name }}</li>
+    {% endfor %}
+</ul>
 <form method="POST" action="{{ return_url }}">
     <input type="submit" name="cancel_button" value="Cancel"></input>
     <input type="submit" name="edit_button" value="Edit"></input>
